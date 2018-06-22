@@ -28,9 +28,12 @@ public class DemoController {
 		try{
 			jdbcTemplate.execute("insert into CUSTOMERDATA(id,name) values(1,'srinivas')" );
 			
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 }
