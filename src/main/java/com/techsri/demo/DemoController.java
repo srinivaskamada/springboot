@@ -13,6 +13,8 @@ public class DemoController {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	@Autowired
+	private CustomerRepository repository;
 	
 	@RequestMapping(value="/createTable",method=RequestMethod.GET)
 	public void createTable(){
@@ -36,16 +38,20 @@ public class DemoController {
 		}
 	}
 	
-	/*@RequestMapping(value="/getData",method=RequestMethod.GET)
-	public ArrayList getData(){
-		
+	@RequestMapping(value="/getData",method=RequestMethod.GET)
+	public ArrayList<String> getData(){
+		ArrayList<String> custList = new ArrayList<String>();
 		try{
-			List jdbcTemplate.execute("select * from CUSTOMERDATA" );
-			
+			for (Customer customer : repository.findAll()) {
+				custList.add(customer.toString());
+			}
+			//custList =repository.findAll();
+			//return custList;
 			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-	}*/
+		return custList;
+	}
 
 }
