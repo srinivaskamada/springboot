@@ -1,5 +1,7 @@
 package com.techsri.demo;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +36,16 @@ public class DemoController {
 		}
 	}
 	
-	
+	/*@RequestMapping(value="/getData",method=RequestMethod.GET)
+	public ArrayList getData(){
+		
+		try{
+			List jdbcTemplate.execute("select * from CUSTOMERDATA" );
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}*/
 
 }
